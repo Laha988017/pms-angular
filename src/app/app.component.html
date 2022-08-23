@@ -1,18 +1,16 @@
 <div>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="padding-left: 10px; padding-right: 10px; ">
   <a class="navbar-brand" routerLink="dashboard">Pension Management System</a>
-  <div class="" >
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse" >
+    <ul class="navbar-nav me-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink="register" *ngIf="!isLoggedIn()">Register</a>
-    </li>
-      <li class="nav-item">
-          <a class="nav-link" routerLink="userlogin" *ngIf="!isLoggedIn()">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" *ngIf="isLoggedIn()" routerLink="userlogin" (click)="logout()">Logout</a>
       </li>
     </ul>
+    <span class="navbar-text">
+      <a class="btn btn-success" routerLink="userlogin" *ngIf="!isLoggedIn()">Login</a>
+      <a class="btn btn-danger" *ngIf="isLoggedIn()" routerLink="userlogin" (click)="logout()">Logout</a>
+    </span>
   </div>
 </nav>
 
